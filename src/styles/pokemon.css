@@ -1,0 +1,8 @@
+.pokemon-cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.poke>button{
+    padding: 1% 2%;
+    margin: 2%;
+}
