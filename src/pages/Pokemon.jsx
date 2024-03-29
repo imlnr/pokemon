@@ -13,9 +13,11 @@ const Pokemon = () => {
     useEffect(() => {
         dispatch(fetchPoke());
     }, []);
-    useEffect((e)=>{
-        dispatch(addPoke(cards))
-    },[cards])
+    const handleClick = ()=>{
+        setcards(prev=>prev+1);
+        console.log("running");
+        dispatch(addPoke(cards));
+    }
     return (
         <div className='poke'>
             <div className='pokemon-cards'>
@@ -23,7 +25,7 @@ const Pokemon = () => {
                     <PokeCard item={ele} />
                 ))}
             </div>
-            <button onClick={(e)=> setcards(prev=>prev+6)}>Load More...</button>
+            <button onClick={(e)=> handleClick()}>Load More...</button>
         </div>
     )
 }

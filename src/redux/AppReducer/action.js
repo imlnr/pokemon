@@ -5,7 +5,7 @@ export const fetchPoke = () => {
     return async (dispatch) => {
         dispatch({ type: GET_POKE_REQUEST });
         try {
-            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=6`);
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12`);
             dispatch({ type: GET_POKE_SUCCESS, payload: res.data.results })
         } catch (error) {
             console.error(error);
